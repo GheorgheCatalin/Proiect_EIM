@@ -5,8 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proiect_eim.R
-import kotlinx.android.synthetic.main.fragment_news.*
+import com.example.proiect_eim.recyclerView.OwnedCryptoAdapter
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import kotlinx.android.synthetic.main.fragment_owned_crypto.*
+import java.lang.reflect.Type
 
 class OwnedCryptoFragment : Fragment() {
     override fun onCreateView(
@@ -19,21 +24,21 @@ class OwnedCryptoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        owned_cryptot_back_btn.setOnClickListener {
+        owned_crypto_back_btn.setOnClickListener {
            activity?.supportFragmentManager?.popBackStack()
         }
 
-//        val gson = Gson()
-//        val bundle = arguments
-//        val json = bundle?.getString("crypto").toString()
-//        val type: Type = object: TypeToken<List<String>>(){}.type
-//        val cryptocurrencies = gson.fromJson<List<String>>(json, type)
-//
-//
-//        owned_crypto_fragment_rv?.apply {
-//            layoutManager = LinearLayoutManager(context)
-//            adapter = Adapter(cryptocurrencies)
-//            adapter?.notifyDataSetChanged()
-//        }
+        val gson = Gson()
+        val bundle = arguments
+        val json = bundle?.getString("crypto").toString()
+        val type: Type = object: TypeToken<List<String>>(){}.type
+        val cryptocurrencies = gson.fromJson<List<String>>(json, type)
+
+
+        owned_crypto_fragment_rv?.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = OwnedCryptoAdapter(cryptocurrencies)
+            adapter?.notifyDataSetChanged()
+        }
     }
 }

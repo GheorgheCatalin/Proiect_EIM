@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FinalProject</string>
+    <string name="app_name">Proiect_EIM</string>
     <string name="newsimage_text">newsImage</string>
     <string name="first_fragment_txt">Go through a list of cryptocurrencies and choose the one you want to add</string>
     <string name="skip_txt">Skip</string>

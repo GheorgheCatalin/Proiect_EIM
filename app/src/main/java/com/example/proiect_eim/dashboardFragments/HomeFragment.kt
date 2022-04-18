@@ -18,6 +18,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.MetadataChanges
 import com.google.firebase.ktx.Firebase
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -112,20 +113,20 @@ class HomeFragment : Fragment() {
     }
 
     private fun handleSeeMore(news: List<String>) {
-//        val bundle = Bundle()
-//        val gson = Gson()
-//        val json = gson.toJson(news)
-//
-//        bundle.putString("crypto", json)
-//        val secondFragment = OwnedCryptoFragment()
-//        secondFragment.arguments = bundle
-//
-//
-//        activity?.supportFragmentManager?.beginTransaction()?.apply {
-//            add(R.id.fragment_container, secondFragment)
-//            addToBackStack("home fragment")
-//            commit()
-//        }
+        val bundle = Bundle()
+        val gson = Gson()
+        val json = gson.toJson(news)
+
+        bundle.putString("crypto", json)
+        val secondFragment = OwnedCryptoFragment()
+        secondFragment.arguments = bundle
+
+
+        activity?.supportFragmentManager?.beginTransaction()?.apply {
+            add(R.id.fragment_container, secondFragment)
+            addToBackStack("home fragment")
+            commit()
+        }
     }
 
     private fun logout(){

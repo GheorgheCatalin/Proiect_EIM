@@ -8,6 +8,7 @@
     tools:context=".dashboardFragments.OwnedCryptoFragment">
 
     <ImageView
+        android:id="@+id/owned_crypto_back_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_baseline_back_24"
@@ -41,6 +42,7 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/owned_crypto_fragment_rv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/bluishWhite"
