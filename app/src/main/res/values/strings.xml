@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">FinalProject</string>
+    <string name="newsimage_text">newsImage</string>
+    <string name="first_fragment_txt">Go through a list of cryptocurrencies and choose the one you want to add</string>
+    <string name="skip_txt">Skip</string>
+    <string name="next_txt">Next</string>
+    <string name="second_fragment_title">Add cryptocurrency</string>
+    <string name="second_fragment_txt">Add the selected cryptocurrency to your virtual wallet, along with your owned amount</string>
+    <string name="third_fragment_title">Keep track of your finances</string>
+    <string name="third_fragment_txt">Keep track of your finances</string>
+    <string name="publishimage_txt">Publish image</string>
+    <string name="navigateimage_txt">Navigate Image</string>
+    <string name="start_txt">Start</string>
+    <string name="email_txt">Email</string>
+    <string name="password_txt">Password</string>
+    <string name="no_account_txt">Don\'t have an account? Create one</string>
+    <string name="login_txt">Login</string>
+    <string name="keep_logged_txt">Keep me authenticated</string>
+    <string name="sign_up_txt">Sign up for a Free Account</string>
+    <string name="must_be_completed_txt">All fields must be completed</string>
+    <string name="firstname_txt">First Name</string>
+    <string name="lastname_txt">Last Name</string>
+    <string name="country_txt">Country</string>
+    <string name="date_txt">Date of Birth</string>
+    <string name="submit_txt">Submit</string>
+    <string name="search_txt">Search</string>
+    <string name="filter_icon_txt">Filter Icon</string>
+    <string name="see_more_txt"><![CDATA[see more>>]]></string>
+    <string name="owned_crypto_title">Your crypto</string>
+    <string name="back_button_txt">back button</string>
+    <string name="first_fragment_title">Choose Cryptocurrency</string>
+    <string name="your_total_amount_title">Your total amount</string>
+</resources>

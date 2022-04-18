@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/et_background"
+    android:paddingBottom="7dp"
+    android:layout_marginBottom="15dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_face_24"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:contentDescription="@string/profile_image_txt" />
+
+    <TextView
+        android:id="@+id/post_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="John Doe"
+        android:textColor="@color/black"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="55dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/post_profession_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Profession"
+        android:layout_marginStart="55dp"
+        app:layout_constraintTop_toBottomOf="@id/post_name_tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_options"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:contentDescription="@string/options_txt" />
+
+    <TextView
+        android:id="@+id/post_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="60h ago"
+        android:textSize="12sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/post_name_tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/post_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Post Title"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="15dp"
+        android:maxLength="25"
+        android:ellipsize="marquee"
+        app:layout_constraintTop_toBottomOf="@id/post_time_tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/post_description_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Description "
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintWidth_max="315dp"
+        app:layout_constraintTop_toBottomOf="@id/post_title_tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:maxLines="3"
+        android:ellipsize="marquee"
+        />
+
+    <View
+        android:id="@+id/separator_line_1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginHorizontal="15dp"
+        app:layout_constraintTop_toBottomOf="@id/post_title_tv"
+        android:background="@color/gray"
+        />
+
+    <LinearLayout
+        android:id="@+id/post_tag_linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/separator_line_1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="horizontal"
+
+        />
+
+    <TextView
+        android:id="@+id/post_likes_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="0"
+        android:textColor="@color/linkBlue"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="45dp"
+        app:layout_constraintTop_toBottomOf="@id/separator_line_1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/likes_txt"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="45dp"
+        app:layout_constraintTop_toBottomOf="@id/separator_line_1"
+        app:layout_constraintLeft_toRightOf="@id/post_likes_tv"
+        />
+
+    <TextView
+        android:id="@+id/post_dislikes_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="0"
+        android:textColor="@color/linkBlue"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="45dp"
+        app:layout_constraintTop_toBottomOf="@id/separator_line_1"
+        app:layout_constraintLeft_toRightOf="@id/post_likes_tv"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dislikes_txt"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="45dp"
+        app:layout_constraintTop_toBottomOf="@id/separator_line_1"
+        app:layout_constraintLeft_toRightOf="@id/post_dislikes_tv"
+        />
+
+    <TextView
+        android:id="@+id/post_comments_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="0"
+        android:textColor="@color/linkBlue"
+        android:layout_marginEnd="100dp"
+        android:layout_marginTop="45dp"
+        app:layout_constraintTop_toBottomOf="@id/separator_line_1"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/comments_txt"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="45dp"
+        app:layout_constraintTop_toBottomOf="@id/separator_line_1"
+        app:layout_constraintLeft_toRightOf="@id/post_comments_tv"
+        />
+
+    <View
+        android:id="@+id/separator_line_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginHorizontal="15dp"
+        app:layout_constraintTop_toBottomOf="@id/post_likes_tv"
+        android:background="@color/gray"
+        />
+
+    <ImageView
+        android:id="@+id/post_like_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_thumb_up_off_24"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="80dp"
+        app:layout_constraintTop_toBottomOf="@id/separator_line_2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:contentDescription="@string/thumbs_up_icon_txt" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/like_txt"
+        android:textSize="16sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/separator_line_2"
+        app:layout_constraintLeft_toRightOf="@id/post_like_icon"
+        />
+
+    <ImageView
+        android:id="@+id/post_dislike_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_thumb_down_off_24"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="140dp"
+        app:layout_constraintTop_toBottomOf="@id/separator_line_2"
+        app:layout_constraintRight_toRightOf="parent"
+        android:contentDescription="@string/thumbs_down_icon_txt" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dislike_txt"
+        android:textSize="16sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/separator_line_2"
+        app:layout_constraintLeft_toRightOf="@id/post_dislike_icon"
+        />
+
+    <View
+        android:id="@+id/separator_line_3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="15dp"
+        app:layout_constraintTop_toBottomOf="@id/post_like_icon"
+        android:background="@color/gray"
+        />
+
+    <TextView
+        android:id="@+id/post_add_comment_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/et_background"
+        android:hint="@string/leave_a_comment_txt"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="3dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/separator_line_3"
+        app:layout_constraintLeft_toRightOf="@id/post_dislike_icon"
+        android:autofillHints="@string/leave_a_comment_txt"
+         />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

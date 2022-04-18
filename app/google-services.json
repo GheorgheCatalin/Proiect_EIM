@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "742535638895",
+    "project_id": "proiect-eim-f1812",
+    "storage_bucket": "proiect-eim-f1812.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742535638895:android:b5b39deeeda9b59bf1429a",
+        "android_client_info": {
+          "package_name": "com.example.proiect_eim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742535638895-c28j0b8d52hjp5iamljg08r82p8kbi3h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5rh1OL5UGEfJs_q6GJecZQ1xnIMupJcs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742535638895-c28j0b8d52hjp5iamljg08r82p8kbi3h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
