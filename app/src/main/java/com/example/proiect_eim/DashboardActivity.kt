@@ -2,12 +2,17 @@ package com.example.proiect_eim
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.proiect_eim.dashboardFragments.AccountFragment
 import com.example.proiect_eim.dashboardFragments.CurrenciesFragment
 import com.example.proiect_eim.dashboardFragments.HomeFragment
 import com.example.proiect_eim.dashboardFragments.SavedFragment
 import kotlinx.android.synthetic.main.activity_dashboard.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class DashboardActivity : AppCompatActivity() {
@@ -38,5 +43,4 @@ class DashboardActivity : AppCompatActivity() {
             replace(R.id.fragment_container, fragment)
             commit()
         }
-
 }

@@ -9,5 +9,8 @@
     <color name="linkBlue">#0066FF</color>
     <color name="pale_blue">#83A7C2</color>
     <color name="bluishWhite">#F8F8FF</color>
-    <color name="gray">#ABABAB</color>
+    <color name="gray1">#ABABAB</color>
+    <color name="gray2">#686868</color>
+    <color name="gray3">#4B4B4B</color>
+
 </resources>

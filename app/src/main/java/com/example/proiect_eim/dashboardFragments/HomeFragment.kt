@@ -11,11 +11,13 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proiect_eim.R
 import com.example.proiect_eim.authentication.LoginActivity
+import com.example.proiect_eim.models.DBCryptoModel
 import com.example.proiect_eim.objects.UserItem
 import com.example.proiect_eim.recyclerView.OwnedCryptoAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.MetadataChanges
 import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
@@ -23,6 +25,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
     lateinit var user : UserItem
+    var snapsnotListener : ListenerRegistration? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +44,21 @@ class HomeFragment : Fragment() {
 
         getUser()
     }
+
+    override fun onStop() {
+        super.onStop()
+        snapsnotListener?.remove()
+    }
+
+//    override fun onPause() {
+//        super.onPause()
+//        snapsnotListener?.remove()
+//    }
+//
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        snapsnotListener?.remove()
+//    }
 
     private fun getUser() {
         // At first get user's data from DB, then set up UI. It it fails, user should login again
@@ -79,7 +97,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun getCryptoList() {
-        FirebaseFirestore.getInstance().collection("crypto_currencies").document("all")
+        snapsnotListener = FirebaseFirestore.getInstance().collection("crypto_currencies").document("all")
             .addSnapshotListener(MetadataChanges.INCLUDE) { snapshot, e ->
                 if (e != null) {
                     Toast.makeText(context, "Error: " + e.message.toString(), Toast.LENGTH_SHORT)
@@ -87,17 +105,24 @@ class HomeFragment : Fragment() {
                     //logout()
                 }
                 if (snapshot != null && snapshot.exists()) {
-                    val cryptocurrenciesList = snapshot.data?.values?.map {
-                        it.toString()
-                    }
+//                    val cryptocurrenciesList = snapshot.data?.values?.map {
+//                        it.toString()
+//                    }
+                    val cryptocurrenciesList = convertResponseToCryptoList(snapshot.data?.values)
+                    //val cryptocurrenciesList = convertResponseToCryptoList(snapshot.data?.entries)
+//                    val cryptocurrenciesList = snapshot.data?.keys?.let {
+//                        convertResponseToCryptoList(
+//                            it
+//                        )
+//                    }
 
                     owned_crypto_rv?.apply {
-                        layoutManager = LinearLayoutManager(context)
+                        layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                         adapter = cryptocurrenciesList?.let { OwnedCryptoAdapter(it) }
                         adapter?.notifyDataSetChanged()
                     }
 
-                    progress_bar_today.visibility = View.GONE
+                    owned_crypto_progress_bar.visibility = View.GONE
 
                     owned_crypto_see_more.setOnClickListener{
                         cryptocurrenciesList?.let {
@@ -112,7 +137,27 @@ class HomeFragment : Fragment() {
             }
     }
 
-    private fun handleSeeMore(news: List<String>) {
+    private fun convertResponseToCryptoList(entries: MutableCollection<Any>?): List<DBCryptoModel> {
+        val cryptocurrenciesList = mutableListOf<DBCryptoModel>()
+
+        if (entries != null) {
+            for (entry in entries){
+                if (entry is HashMap<*, *>) {
+                    cryptocurrenciesList.add(
+                        DBCryptoModel(
+                            entry["name"] as String?,
+                            entry["amount"] as String?,
+                            entry["symbol"] as String?
+                        )
+                    )
+                }
+            }
+        }
+
+        return cryptocurrenciesList
+    }
+
+    private fun handleSeeMore(news: List<DBCryptoModel>) {
         val bundle = Bundle()
         val gson = Gson()
         val json = gson.toJson(news)

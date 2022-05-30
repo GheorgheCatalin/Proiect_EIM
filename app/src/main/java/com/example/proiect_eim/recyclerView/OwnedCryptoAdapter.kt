@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proiect_eim.R
+import com.example.proiect_eim.models.DBCryptoModel
 
 class OwnedCryptoAdapter(
-    private var ownedCrypto: List<String>
+    private var ownedCrypto: List<DBCryptoModel>
 ) : RecyclerView.Adapter<OwnedCryptoViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OwnedCryptoViewHolder {
         return OwnedCryptoViewHolder(

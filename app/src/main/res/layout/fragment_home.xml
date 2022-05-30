@@ -86,7 +86,7 @@
             />
 
         <ProgressBar
-            android:id="@+id/progress_bar_today"
+            android:id="@+id/owned_crypto_progress_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proiect_eim.R
+import com.example.proiect_eim.models.DBCryptoModel
 import com.example.proiect_eim.recyclerView.OwnedCryptoAdapter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -31,8 +32,8 @@ class OwnedCryptoFragment : Fragment() {
         val gson = Gson()
         val bundle = arguments
         val json = bundle?.getString("crypto").toString()
-        val type: Type = object: TypeToken<List<String>>(){}.type
-        val cryptocurrencies = gson.fromJson<List<String>>(json, type)
+        val type: Type = object: TypeToken<List<DBCryptoModel>>(){}.type
+        val cryptocurrencies = gson.fromJson<List<DBCryptoModel>>(json, type)
 
 
         owned_crypto_fragment_rv?.apply {
