@@ -94,6 +94,23 @@ class HomeFragment : Fragment() {
 
         getCryptoList()
 
+        your_amount_store_tv.setOnClickListener {
+            storeAmountToDataBase()
+        }
+    }
+
+    private fun storeAmountToDataBase() {
+        var currentAmount = your_amount_tv.text.toString()
+        val timestamp = (System.currentTimeMillis()/1000).toString()
+        currentAmount = currentAmount.replace(" ","")
+        currentAmount = currentAmount.replace("\$","")
+
+        FirebaseFirestore.getInstance()
+            .collection("crypto_total_amount")
+            .document("all")
+            .update(
+                mapOf(timestamp to currentAmount)
+            )
     }
 
     private fun getCryptoList() {

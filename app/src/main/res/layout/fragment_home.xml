@@ -42,13 +42,30 @@
             />
 
         <TextView
+            android:id="@+id/your_amount_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="100000 $"
+            android:text="1114 $"
             android:textSize="20sp"
             android:textColor="@color/black"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/your_amount_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/your_amount_store_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Store current amount"
+            android:background="@drawable/et_background"
+            android:backgroundTint="@color/teal_200"
+            android:padding="5dp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/your_amount_tv"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             />
@@ -59,7 +76,7 @@
             android:layout_height="wrap_content"
             android:text="@string/see_more_txt"
             android:textColor="@color/linkBlue"
-            android:layout_marginTop="190dp"
+            android:layout_marginTop="210dp"
             android:layout_marginEnd="10dp"
             app:layout_constraintTop_toBottomOf="@id/hello_user_tv"
             app:layout_constraintRight_toRightOf="parent"
@@ -95,6 +112,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
